@@ -77,10 +77,11 @@ class RegisterController extends Controller
     {
          $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:users|regex:/(.+)@(.+)\.(.+)/i',
             'contact' => 'required| min:11| max:11',
             'password' => 'required|confirmed|min:6',
             'password_confirmation' => 'required|min:6',
+            'date_of_birth' => 'required',
             'agree_term' => 'required'
         ]);
 
@@ -93,6 +94,8 @@ class RegisterController extends Controller
         $user->contact =  $request->contact;
         $user->password =  Hash::make($request->password);
         $user->text_pass =  $request->password;
+        $user->date_of_birth =  $request->date_of_birth;
+        $user->sts = 0;
         $user->save();
 
         // create user_activity_hstry table

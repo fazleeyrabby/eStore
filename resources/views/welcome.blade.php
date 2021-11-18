@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
    <head>
@@ -29,8 +27,8 @@
       </style>
       <script type="text/javascript">
          $(document).ready(function(){
-   $(".wish-icon i").click(function(){
-      $(this).toggleClass("fa-heart fa-heart-o");
+            $(".wish-icon i").click(function(){
+            $(this).toggleClass("fa-heart fa-heart-o");
    });
 });
       </script>

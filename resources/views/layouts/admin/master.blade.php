@@ -10,6 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/assets/backend/plugins/images/favicon.png') }}') }}">
     <title>Cubic Admin Template</title>
+      @include('sweetalert::alert')
     <!-- ===== Bootstrap CSS ===== -->
     <link href="{{ asset('public/assets/backend/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- ===== Plugin CSS ===== -->
@@ -26,6 +27,7 @@
 </head>
 
 <body class="mini-sidebar">
+      @include('sweetalert::alert')
     <!-- ===== Main-Wrapper ===== -->
     <div id="wrapper">
         <div class="preloader">
@@ -59,61 +61,43 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
+                    @php
+                        $pending = App\Models\User::where('sts',0)->count();
+                    @endphp
                     <li class="dropdown">
                         <a class="dropdown-toggle waves-effect waves-light font-20" data-toggle="dropdown" href="javascript:void(0);">
                             <i class="icon-speech"></i>
-                            <span class="badge badge-xs badge-danger">6</span>
+                            <span class="badge badge-xs badge-danger">{{ $pending }}</span>
                         </a>
                         <ul class="dropdown-menu mailbox animated bounceInDown">
                             <li>
                                 <div class="drop-title">You have 4 new messages</div>
                             </li>
                             <li>
+                                @php
+                                    $pendings = App\Models\User::where('sts',0)
+                                                    ->orderBy('id','DESC')
+                                                    ->take(5)
+                                                    ->get();
+                                @endphp
+                                @foreach($pendings as $pending)
                                 <div class="message-center">
-                                    <a href="javascript:void(0);">
-                                        <div class="user-img">
-                                            <img src="{{ asset('public/assets/backend/plugins/images/users/1.jpg') }}" alt="user" class="img-circle">
-                                            <span class="profile-status online pull-right"></span>
-                                        </div>
-                                        <div class="mail-contnet">
-                                            <h5>Pavan kumar</h5>
-                                            <span class="mail-desc">Just see the my admin!</span>
-                                            <span class="time">9:30 AM</span>
-                                        </div>
-                                    </a>
-                                    <a href="javascript:void(0);">
+                                    <a href="{{ route('user.notify',$pending->id) }}">
                                         <div class="user-img">
                                             <img src="{{ asset('public/assets/backend/plugins/images/users/2.jpg') }}" alt="user" class="img-circle">
                                             <span class="profile-status busy pull-right"></span>
                                         </div>
                                         <div class="mail-contnet">
-                                            <h5>Sonu Nigam</h5>
-                                            <span class="mail-desc">I've sung a song! See you at</span>
-                                            <span class="time">9:10 AM</span>
-                                        </div>
-                                    </a>
-                                    <a href="javascript:void(0);">
-                                        <div class="user-img">
-                                            <img src="{{ asset('public/assets/backend/plugins/images/users/3.jpg') }}" alt="user" class="img-circle"><span class="profile-status away pull-right"></span>
-                                        </div>
-                                        <div class="mail-contnet">
-                                            <h5>Arijit Sinh</h5>
-                                            <span class="mail-desc">I am a singer!</span>
-                                            <span class="time">9:08 AM</span>
-                                        </div>
-                                    </a>
-                                    <a href="javascript:void(0);">
-                                        <div class="user-img">
-                                            <img src="{{ asset('public/assets/backend/plugins/images/users/4.jpg') }}" alt="user" class="img-circle">
-                                            <span class="profile-status offline pull-right"></span>
-                                        </div>
-                                        <div class="mail-contnet">
-                                            <h5>Pavan kumar</h5>
-                                            <span class="mail-desc">Just see the my admin!</span>
-                                            <span class="time">9:02 AM</span>
+                                            <h5>{{ $pending->name }}</h5>
+                                            <span class="mail-desc">New Member Register</span>
+                                            <span class="time">
+                                            {{ \Carbon\Carbon::createFromTimeStamp(strtotime($pending->created_at))->diffForHumans() }}                                           
+                                            </span>
+                                           
                                         </div>
                                     </a>
                                 </div>
+                                @endforeach
                             </li>
                             <li>
                                 <a class="text-center" href="javascript:void(0);">
@@ -217,6 +201,7 @@
                 </ul>
             </div>
         </nav>
+          @include('sweetalert::alert')
         <!-- ===== Top-Navigation-End ===== -->
         <!-- ===== Left-Sidebar ===== -->
         @include('layouts.admin.sidebar')

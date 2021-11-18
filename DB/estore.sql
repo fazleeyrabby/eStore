@@ -217,6 +217,20 @@ CREATE TABLE `ref_product_category` (
 
 /*Data for the table `ref_product_category` */
 
+/*Table structure for table `roles` */
+
+DROP TABLE IF EXISTS `roles`;
+
+CREATE TABLE `roles` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+/*Data for the table `roles` */
+
+insert  into `roles`(`id`,`name`) values (1,'Admin'),(2,'Supar Admin'),(3,'Sub Admin');
+
 /*Table structure for table `users` */
 
 DROP TABLE IF EXISTS `users`;
@@ -228,8 +242,9 @@ CREATE TABLE `users` (
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `text_pass` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contact` int(11) DEFAULT NULL,
+  `role` tinyint(1) DEFAULT NULL,
+  `contact` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
   `sts` tinyint(4) DEFAULT NULL,
   `e_dt` datetime DEFAULT NULL,
   `u_by` int(11) DEFAULT NULL,
@@ -240,11 +255,11 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`text_pass`,`role`,`contact`,`sts`,`e_dt`,`u_by`,`u_dt`,`d_by`,`d_dt`,`created_at`,`updated_at`) values (1,'Admin','admin@gmail.com',NULL,'$2y$10$CGTGuQxac1PhINzn0pO.AekR7CdK70xGi2NGHCa..lxX3CvpFOjlq','123456789','admin',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(10,'Fazley Rabbi','fazleyrabbicse@gmail.com',NULL,'$2y$10$M/DWx.pzIEAoK4tCQzEo6uy763/ep7fZWNFvnh61LPF3IdtJH2ChW','123456789',NULL,1713869303,NULL,NULL,NULL,NULL,NULL,NULL,'2021-11-13 15:52:10','2021-11-13 15:52:10'),(11,'FR','fr@gmail.com',NULL,'$2y$10$lf6TXh0lE3VkN4yW8t8ZoeeY1w9G8IT10OkLp.PjoSFit6Z4QoyRK','123456789',NULL,1713869303,NULL,NULL,NULL,NULL,NULL,NULL,'2021-11-13 15:57:09','2021-11-13 15:57:09'),(12,'gfdgsd','shakil@afafga.gfd',NULL,'$2y$10$qdPctvCJ.qebZ8JfsvZ2QeZZCgA5.Gl27mfPvASS3Z7L6g4RNVWwW','123456789',NULL,1236547895,NULL,NULL,NULL,NULL,NULL,NULL,'2021-11-13 16:23:43','2021-11-13 16:23:43'),(13,'Joy Karmakar','joy@gmail.com',NULL,'$2y$10$0h3nsnBeKfV.h7N54YZdoO4vsQIfjAkncAdRfUnkC.dw2ajv99tcy','123456789',NULL,1713869303,NULL,NULL,NULL,NULL,NULL,NULL,'2021-11-15 16:15:53','2021-11-15 16:15:53');
+insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`text_pass`,`role`,`contact`,`date_of_birth`,`sts`,`e_dt`,`u_by`,`u_dt`,`d_by`,`d_dt`,`created_at`,`updated_at`) values (1,'Admin','admin@gmail.com',NULL,'$2y$10$CGTGuQxac1PhINzn0pO.AekR7CdK70xGi2NGHCa..lxX3CvpFOjlq','123456789',1,'01713869303','2021-11-01',1,NULL,NULL,NULL,NULL,NULL,NULL,'2021-11-18 14:24:04'),(10,'Fazley Rabbi','fazleyrabbicse@gmail.com',NULL,'$2y$10$M/DWx.pzIEAoK4tCQzEo6uy763/ep7fZWNFvnh61LPF3IdtJH2ChW','123456789',2,'01713869303','2021-11-02',1,NULL,NULL,NULL,NULL,NULL,'2021-11-13 15:52:10','2021-11-18 15:07:56'),(11,'FR','fr@gmail.com',NULL,'$2y$10$lf6TXh0lE3VkN4yW8t8ZoeeY1w9G8IT10OkLp.PjoSFit6Z4QoyRK','123456789',3,'01713869303','2021-11-18',1,NULL,NULL,NULL,NULL,NULL,'2021-11-13 15:57:09','2021-11-18 15:11:46'),(12,'gfdgsd','shakil@afafga.gfd',NULL,'$2y$10$qdPctvCJ.qebZ8JfsvZ2QeZZCgA5.Gl27mfPvASS3Z7L6g4RNVWwW','123456789',3,'01236547895','2021-11-18',1,NULL,NULL,NULL,NULL,NULL,'2021-11-13 16:23:43','2021-11-18 15:11:52'),(13,'Joy Karmakar','joy@gmail.com',NULL,'$2y$10$0h3nsnBeKfV.h7N54YZdoO4vsQIfjAkncAdRfUnkC.dw2ajv99tcy','123456789',1,'01713869303','2021-11-11',1,NULL,NULL,NULL,NULL,NULL,'2021-11-15 16:15:53','2021-11-18 17:08:15'),(14,'Miraj','miraj@gmail.com',NULL,'$2y$10$bjc0WZEwtqHamSBbU0WCKOLqo3dy3nBvpmDuo76s2bA7C3fCTtcjC','123456789',3,'01712876714','2021-11-16',1,NULL,NULL,NULL,NULL,NULL,'2021-11-15 17:19:51','2021-11-18 17:11:29'),(15,'ad','afa@faf.fs',NULL,'$2y$10$Rcj88Wl3R.MIueP8n3I0sOEh4YnTr.zBQpANFyGGKW12k7KF/MP/u','123456789',NULL,'01713869303','2021-11-01',0,NULL,NULL,NULL,NULL,NULL,'2021-11-18 15:41:11','2021-11-18 15:41:11'),(16,'asd','asd@gmail.com',NULL,'$2y$10$MmKBFWMAH4VsDemTXozHfOteC2ZRrla14tPFarwPoFWN3WnMmLsmC','123456789',NULL,'01713869303','2021-11-01',0,NULL,NULL,NULL,NULL,NULL,'2021-11-18 15:42:50','2021-11-18 15:42:50');
 
 /*Table structure for table `users_activity_history` */
 
@@ -262,11 +277,11 @@ CREATE TABLE `users_activity_history` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users_activity_history` */
 
-insert  into `users_activity_history`(`id`,`activities_Id`,`activities_by`,`activities_dt`,`ip`,`table_name`,`sys_link_cat_id`,`sys_link_group_id`,`created_at`,`updated_at`) values (4,NULL,NULL,NULL,'::1','user',NULL,NULL,'2021-11-13 15:52:10','2021-11-13 15:52:10'),(5,NULL,NULL,NULL,'192.168.0.246','user',NULL,NULL,'2021-11-13 15:57:09','2021-11-13 15:57:09'),(6,NULL,NULL,NULL,'127.0.0.1','user',NULL,NULL,'2021-11-13 16:23:43','2021-11-13 16:23:43'),(7,NULL,NULL,NULL,'127.0.0.1','user',NULL,NULL,'2021-11-15 16:15:53','2021-11-15 16:15:53');
+insert  into `users_activity_history`(`id`,`activities_Id`,`activities_by`,`activities_dt`,`ip`,`table_name`,`sys_link_cat_id`,`sys_link_group_id`,`created_at`,`updated_at`) values (4,NULL,NULL,NULL,'::1','user',NULL,NULL,'2021-11-13 15:52:10','2021-11-13 15:52:10'),(5,NULL,NULL,NULL,'192.168.0.246','user',NULL,NULL,'2021-11-13 15:57:09','2021-11-13 15:57:09'),(6,NULL,NULL,NULL,'127.0.0.1','user',NULL,NULL,'2021-11-13 16:23:43','2021-11-13 16:23:43'),(7,NULL,NULL,NULL,'127.0.0.1','user',NULL,NULL,'2021-11-15 16:15:53','2021-11-15 16:15:53'),(8,NULL,NULL,NULL,'127.0.0.1','user',NULL,NULL,'2021-11-15 17:19:52','2021-11-15 17:19:52'),(9,NULL,NULL,NULL,'127.0.0.1','user',NULL,NULL,'2021-11-18 15:41:11','2021-11-18 15:41:11'),(10,NULL,NULL,NULL,'127.0.0.1','user',NULL,NULL,'2021-11-18 15:42:51','2021-11-18 15:42:51');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

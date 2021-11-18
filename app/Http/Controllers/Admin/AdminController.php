@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Roles;
 
 class AdminController extends Controller
 {
@@ -24,7 +25,8 @@ class AdminController extends Controller
         $request->session()->forget(['menu']);
         $request->session()->put(['menu'=>'allUser']);
 
-        $users = User::orderBy('id','DESC')->get();
-        return view('admin.user.all',compact('users'));
+        $users = User::orderBy('id','DESC')->paginate(5);
+        $roles = Roles::all();
+        return view('admin.user.all',compact('users','roles'));
     }
 }

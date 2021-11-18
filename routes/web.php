@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,7 @@ use App\Http\Controllers\Auth\RegisterController;
 */
 
 // user area
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -41,7 +42,7 @@ Route::get('logout', function(Request $request) {
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function(){
         $role = Auth::user()->role;
-        if($role == 'admin')
+        if($role == 1)
             return redirect('admin/dashboard');
     });
 });
@@ -50,6 +51,8 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/user', [App\Http\Controllers\Admin\AdminController::class, 'allUser'])->name('user.all');
+    Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'notifyUser'])->name('user.notify');
+    Route::post('/user/update', [App\Http\Controllers\UserController::class, 'updateUser'])->name('user.update');
     Route::get('/product/create', [App\Http\Controllers\Admin\AdminController::class, 'create'])->name('create');
     Route::get('/product/manage', [App\Http\Controllers\Admin\AdminController::class, 'all_product'])->name('all_product');
     

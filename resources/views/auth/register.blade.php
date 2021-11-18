@@ -61,6 +61,12 @@
                   </div>
                   <div class="form-group ">
                      <div class="col-xs-12">
+                        <input class="form-control" name="date_of_birth" type="date" placeholder="Date of Birth" value="{{old('date_of_birth')}}">
+                         @error('contact')<span class="text-danger">{{ $message }}</span>@enderror
+                     </div>
+                  </div>
+                  <div class="form-group ">
+                     <div class="col-xs-12">
                         <input class="form-control" name="password" type="password" placeholder="Password" value="{{old('password')}}">
                         @error('password')<span class="text-danger">{{ $message }}</span>@enderror
                      </div>
