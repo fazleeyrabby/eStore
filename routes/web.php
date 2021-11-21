@@ -51,8 +51,9 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/user', [App\Http\Controllers\Admin\AdminController::class, 'allUser'])->name('user.all');
-    Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'notifyUser'])->name('user.notify');
-    Route::post('/user/update', [App\Http\Controllers\UserController::class, 'updateUser'])->name('user.update');
+    Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'notify'])->name('user.notify');
+    Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
+    Route::get('/user/delete/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('user.delete');
     Route::get('/product/create', [App\Http\Controllers\Admin\AdminController::class, 'create'])->name('create');
     Route::get('/product/manage', [App\Http\Controllers\Admin\AdminController::class, 'all_product'])->name('all_product');
     

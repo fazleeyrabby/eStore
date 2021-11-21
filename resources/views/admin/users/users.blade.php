@@ -27,16 +27,15 @@
                            <th>Status</th>
                            <th>Created Date</th>
                            <th class="text-nowrap">Action</th>
-                           <!-- <th class="text-nowrap">act sts</th> -->
                         </tr>
                      </thead>
                      <tbody>
                         @php
                         $sl = 1;
                         @endphp
-                        @foreach($users as $user)
+                        @foreach($users as $key=>$user)
                         <tr>
-                           <td>{{ $sl++ }}</td>
+                           <td>{{ $key+ $users->firstItem() }}</td>
                            <td>{{ $user->name }}</td>
                            <td>{{ $user->email }}</td>
                            <td>
@@ -60,7 +59,7 @@
                            <td>{{ Carbon\Carbon::parse($user->created_at)->format('M j, Y') }}</td>
                            <td class="text-nowrap">
                               <a href="#" data-original-title="Edit" data-brandname="" data-toggle="modal" data-target="#edituser{{$user->id}}"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                              <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+                              <a href="{{ route('user.delete',$user->id) }}" data-toggle="tooltip" data-original-title="Delete"> <i class="fa fa-close text-danger"></i> </a>
                            </td>
                         </tr>
                         <!-- Start Edit User modal -->
@@ -113,8 +112,11 @@
                         @endforeach
                      </tbody>
                   </table>
+                  <div class="text-right">
+                  <p style="margin:1px 219px -48px 0px">Displaying {{$users->firstItem()}} to {{ $users->lastItem() }} of {{ $users->total() }} User(s).</p>
+                  {!! $users->links() !!}
+                  </div>
                </div>
-               {{ $users->render() }}
             </div>
          </div>
       </div>
@@ -122,10 +124,3 @@
 </div>
 <!-- sweert alert message -->
 @endsection
-<!-- @section('js')
-   <script type="text/javascript">
-    $(document).ready(function() {
-            $('#users_table').DataTable();
-        });
-   </script>
-   @endsection -->

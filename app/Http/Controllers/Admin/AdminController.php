@@ -25,8 +25,8 @@ class AdminController extends Controller
         $request->session()->forget(['menu']);
         $request->session()->put(['menu'=>'allUser']);
 
-        $users = User::orderBy('id','DESC')->paginate(5);
+        $users =  User::where('sts',1)->orderBy('id','DESC')->paginate(3);
         $roles = Roles::all();
-        return view('admin.user.all',compact('users','roles'));
+        return view('admin.users.users',compact('users','roles'));
     }
 }

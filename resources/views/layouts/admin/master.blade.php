@@ -240,7 +240,7 @@
     <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-        $('#users_table').DataTable();
+        //$('#users_table').DataTable();
     } );
     </script>
 </body>
