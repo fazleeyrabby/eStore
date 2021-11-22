@@ -20,7 +20,7 @@ class UserController extends Controller
     }
 
     public function notify($id){
-      $users =  User::where('id',$id)->get();
+      $users =  User::where('id',$id)->paginate(1);
       return view('admin.users.users', compact('users'));
     }
 
