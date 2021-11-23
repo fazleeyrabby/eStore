@@ -109,13 +109,13 @@
                                     Assigned To
                                     <ul class="list-inline">
                                         <li class="p-l-0">
-                                            <img src="{{ asset('public/assets/backend/plugins/images/users/1.png') }}" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave">
+                                            <img src="{{ asset('assets/backend/plugins/images/users/1.png') }}" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave">
                                         </li>
                                         <li>
-                                            <img src="{{ asset('public/assets/backend/plugins/images/users/2.png') }}" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave">
+                                            <img src="{{ asset('assets/backend/plugins/images/users/2.png') }}" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave">
                                         </li>
                                         <li>
-                                            <img src="{{ asset('public/assets/backend/plugins/images/users/3.png') }}" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave">
+                                            <img src="{{ asset('assets/backend/plugins/images/users/3.png') }}" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave">
                                         </li>
                                         <li class="p-r-0">
                                             <a href="javascript:void(0);" class="btn btn-success font-16">3+</a>
@@ -324,7 +324,7 @@
                         <div class="white-box">
                             <div class="task-widget2">
                                 <div class="task-image">
-                                    <img src="{{ asset('public/assets/backend/plugins/images/task.jpg') }}" alt="task" class="img-responsive">
+                                    <img src="{{ asset('assets/backend/plugins/images/task.jpg') }}" alt="task" class="img-responsive">
                                     <div class="task-image-overlay"></div>
                                     <div class="task-detail">
                                         <h2 class="font-light text-white m-b-0">07 April</h2>
@@ -389,7 +389,7 @@
                             <h4 class="box-title">Chat</h4>
                             <ul class="chat-list slimscroll" style="overflow: hidden;" tabindex="5005">
                                 <li>
-                                    <div class="chat-image"> <img alt="male" src="{{ asset('public/assets/backend/plugins/images/users/hanna.jpg') }}"> </div>
+                                    <div class="chat-image"> <img alt="male" src="{{ asset('assets/backend/plugins/images/users/hanna.jpg') }}"> </div>
                                     <div class="chat-body">
                                         <div class="chat-text">
                                             <p><span class="font-semibold">Hanna Gover</span> Hey Daniel, This is just a sample chat. </p>
@@ -406,7 +406,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="chat-image"> <img alt="male" src="{{ asset('public/assets/backend/plugins/images/users/hanna.jpg') }}"> </div>
+                                    <div class="chat-image"> <img alt="male" src="{{ asset('assets/backend/plugins/images/users/hanna.jpg') }}"> </div>
                                     <div class="chat-body">
                                         <div class="chat-text">
                                             <p><span class="font-semibold">Hanna Gover</span> Bye now. </p>
@@ -469,22 +469,22 @@
                             <ul class="m-t-20 chatonline">
                                 <li><b>Chat option</b></li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{ asset('public/assets/backend/plugins/images/users/1.jpg') }}" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{ asset('assets/backend/plugins/images/users/1.jpg') }}" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{ asset('public/assets/backend/plugins/images/users/2.jpg') }}" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{ asset('assets/backend/plugins/images/users/2.jpg') }}" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{ asset('public/assets/backend/plugins/images/users/3.jpg') }}" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{ asset('assets/backend/plugins/images/users/3.jpg') }}" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{ asset('public/assets/backend/plugins/images/users/4.jpg') }}" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{ asset('assets/backend/plugins/images/users/4.jpg') }}" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{ asset('public/assets/backend/plugins/images/users/5.jpg') }}" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{ asset('assets/backend/plugins/images/users/5.jpg') }}" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{ asset('public/assets/backend/plugins/images/users/6.jpg') }}" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{ asset('assets/backend/plugins/images/users/6.jpg') }}" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
                                 </li>
                             </ul>
                         </div>

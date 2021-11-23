@@ -6,10 +6,10 @@
         <div class="top-left-part">
             <a class="logo" href="index.html">
                 <b>
-                    <img src="{{ asset('/public/assets/backend/plugins/images/logo.png') }}" alt="home" />
+                    <img src="{{ asset('assets/backend/plugins/images/logo.png') }}" alt="home" />
                 </b>
                 <span>
-                    <img src="{{ asset('/public/assets/backend/plugins/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
+                    <img src="{{ asset('assets/backend/plugins/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
                 </span>
             </a>
         </div>
@@ -39,7 +39,7 @@
 
                             <a href="javascript:void(0);">
                                 <div class="user-img">
-                                    <img src="{{ asset('/public/assets/backend/plugins/images/users/1.jpg') }}" alt="user" class="img-circle">
+                                    <img src="{{ asset('assets/backend/plugins/images/users/1.jpg') }}" alt="user" class="img-circle">
                                     <span class="profile-status online pull-right"></span>
                                 </div>
                                 <div class="mail-contnet">

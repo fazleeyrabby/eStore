@@ -6,13 +6,28 @@
       <div class="row">
          <div class="col-sm-12">
             <div class="white-box" style="background: #F5F5F5;">
-               <!-- <h3 class="box-title m-b-0 text-info">All User Information</h3><br> -->
-               <!-- <p class="text-muted m-b-20">Add<code>.table-bordered</code>for borders on all sides of the table and cells.</p> -->
+               <!-- <h3 class="box-title m-b-0 text-info">All User Information</h3><br>
+               <p class="text-muted m-b-20">Add<code>.table-bordered</code>for borders on all sides of the table and cells.</p> -->
                <div class="app-title">
                   <div>
                      <h3 class="text-info"><i class="fa fa-user fa-lg "></i> All User Information</h3>
                   </div>
                </div>
+                <!-- <div class="panel-heading"> With Horizontal two column</div> -->
+               
+               
+               <div class="col-md-offset-4">
+                  <select class="" width="30%" name="columnName" id="columnName">
+                        <option value="">SELECT</option>
+                        <option value="name">Name</option>
+                        <option value="email">Email</option>
+                        <option value="role">Role</option>
+                        <option value="contrat">Contract</option>
+                  </select> 
+                  <input type="text" name="filterValue" id="filterValue">
+               </div>
+                                                   
+               
                <br>
                <div class="table-responsive">
                   <table class="table table-bordered" id="users_table">
@@ -123,4 +138,13 @@
    </div>
 </div>
 <!-- sweert alert message -->
+@endsection
+
+@section('js')
+   <script type="text/javascript">
+      $(document).ready(function(){
+         $("#filterValue").on("keyup", function(){
+          alert("The paragraph was clicked.");
+      });
+   });
 @endsection

@@ -11,14 +11,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <title>Cubic Admin Template</title>
     <!-- ===== Bootstrap CSS ===== -->
-    <link href="{{ asset('public/assets/backend/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/backend/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- ===== Plugin CSS ===== -->
     <!-- ===== Animation CSS ===== -->
-    <link href="{{ asset('public/assets/backend/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/backend/css/animate.css') }}" rel="stylesheet">
     <!-- ===== Custom CSS ===== -->
-    <link href="{{ asset('public/assets/backend/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/backend/css/style.css') }}" rel="stylesheet">
     <!-- ===== Color CSS ===== -->
-    <link href="{{ asset('public/assets/backend/css/colors/default.css') }}" id="theme" rel="stylesheet">
+    <link href="{{ asset('assets/backend/css/colors/default.css') }}" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -97,19 +97,19 @@
         </div>
     </section>
     <!-- jQuery -->
-    <script src="{{ asset('public/assets/backend/plugins/components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/components/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ asset('public/assets/backend/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- Menu Plugin JavaScript -->
-    <script src="{{ asset('public/assets/backend/js/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/sidebarmenu.js') }}"></script>
     <!--slimscroll JavaScript -->
-    <script src="{{ asset('public/assets/backend/js/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/jquery.slimscroll.js') }}"></script>
     <!--Wave Effects -->
-    <script src="{{ asset('public/assets/backend/js/waves.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/waves.js') }}"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="{{ asset('public/assets/backend/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/custom.js') }}"></script>
     <!--Style Switcher -->
-    <script src="{{ asset('public/assets/backend/plugins/components/styleswitcher/jQuery.style.switcher.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/components/styleswitcher/jQuery.style.switcher.js') }}"></script>
 </body>
 
 </html>

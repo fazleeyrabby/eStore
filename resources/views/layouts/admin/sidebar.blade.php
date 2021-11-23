@@ -3,7 +3,7 @@
         <div class="user-profile">
             <div class="dropdown user-pro-body">
                 <div class="profile-image">
-                    <img src="{{ asset('/public/assets/backend/plugins/images/users/hanna.jpg') }}" alt="user-img" class="img-circle">
+                    <img src="{{ asset('assets/backend/plugins/images/users/hanna.jpg') }}" alt="user-img" class="img-circle">
                     <a href="javascript:void(0);" class="dropdown-toggle u-dropdown text-blue" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="badge badge-danger">
                             <i class="fa fa-angle-down"></i>

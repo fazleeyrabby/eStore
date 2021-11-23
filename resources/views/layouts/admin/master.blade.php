@@ -8,20 +8,20 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/assets/backend/plugins/images/favicon.png') }}') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/backend/plugins/images/favicon.png') }}') }}">
     <title>Cubic Admin Template</title>
       @include('sweetalert::alert')
     <!-- ===== Bootstrap CSS ===== -->
-    <link href="{{ asset('public/assets/backend/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/backend/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- ===== Plugin CSS ===== -->
-    <link href="{{ asset('public/assets/backend/plugins/components/chartist-js/dist/chartist.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/backend/plugins/components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/backend/plugins/components/chartist-js/dist/chartist.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/backend/plugins/components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css') }}" rel="stylesheet">
     <!-- ===== Animation CSS ===== -->
-    <link href="{{ asset('public/assets/backend/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/backend/css/animate.css') }}" rel="stylesheet">
     <!-- ===== Custom CSS ===== -->
-    <link href="{{ asset('public/assets/backend/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/backend/css/style.css') }}" rel="stylesheet">
     <!-- ===== Color CSS ===== -->
-    <link href="{{ asset('public/assets/backend/css/colors/default.css') }}" id="theme" rel="stylesheet">
+    <link href="{{ asset('assets/backend/css/colors/default.css') }}" id="theme" rel="stylesheet">
     <!-- datatable -->
      <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
 </head>
@@ -42,10 +42,10 @@
                 <div class="top-left-part">
                     <a class="logo" href="index.html">
                         <b>
-                            <img src="{{ asset('public/assets/backend/plugins/images/logo.png') }}" alt="home" />
+                            <img src="{{ asset('assets/backend/plugins/images/logo.png') }}" alt="home" />
                         </b>
                         <span>
-                            <img src="{{ asset('public/assets/backend/plugins/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
+                            <img src="{{ asset('assets/backend/plugins/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
                         </span>
                     </a>
                 </div>
@@ -84,7 +84,7 @@
                                 <div class="message-center">
                                     <a href="{{ route('user.notify',$pending->id) }}">
                                         <div class="user-img">
-                                            <img src="{{ asset('public/assets/backend/plugins/images/users/2.jpg') }}" alt="user" class="img-circle">
+                                            <img src="{{ asset('assets/backend/plugins/images/users/2.jpg') }}" alt="user" class="img-circle">
                                             <span class="profile-status busy pull-right"></span>
                                         </div>
                                         <div class="mail-contnet">
@@ -209,33 +209,35 @@
         <!-- ===== Page-Content ===== -->
         @yield('content')
         <!-- ===== Page-Content-End ===== -->
+        @include('layouts.admin.footer')
     </div>
     <!-- ===== Main-Wrapper-End ===== -->
     <!-- ==============================
         Required JS Files
     =============================== -->
     <!-- ===== jQuery ===== -->
-    <script src="{{ asset('public/assets/backend/plugins/components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/components/jquery/dist/jquery.min.js') }}"></script>
     <!-- ===== Bootstrap JavaScript ===== -->
-    <script src="{{ asset('public/assets/backend/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- ===== Slimscroll JavaScript ===== -->
-    <script src="{{ asset('public/assets/backend/js/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/jquery.slimscroll.js') }}"></script>
     <!-- ===== Wave Effects JavaScript ===== -->
-    <script src="{{ asset('public/assets/backend/js/waves.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/waves.js') }}"></script>
     <!-- ===== Menu Plugin JavaScript ===== -->
-    <script src="{{ asset('public/assets/backend/js/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/sidebarmenu.js') }}"></script>
     <!-- ===== Custom JavaScript ===== -->
-    <script src="{{ asset('public/assets/backend/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/custom.js') }}"></script>
     <!-- ===== Plugin JS ===== -->
-    <script src="{{ asset('public/assets/backend/plugins/components/chartist-js/dist/chartist.min.js') }}"></script>
-    <script src="{{ asset('public/assets/backend/plugins/components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"></script>
-    <script src="{{ asset('public/assets/backend/plugins/components/sparkline/jquery.sparkline.min.js') }}"></script>
-    <script src="{{ asset('public/assets/backend/plugins/components/sparkline/jquery.charts-sparkline.js') }}"></script>
-    <script src="{{ asset('public/assets/backend/plugins/components/knob/jquery.knob.js') }}"></script>
-    <script src="{{ asset('public/assets/backend/plugins/components/easypiechart/dist/jquery.easypiechart.min.js') }}"></script>
-    <script src="{{ asset('public/assets/backend/js/db1.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/components/chartist-js/dist/chartist.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/components/sparkline/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/components/sparkline/jquery.charts-sparkline.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/components/knob/jquery.knob.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/components/easypiechart/dist/jquery.easypiechart.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/db1.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/search.js') }}"></script>
     <!-- ===== Style Switcher JS ===== -->
-    <script src="{{ asset('public/assets/backend/plugins/components/styleswitcher/jQuery.style.switcher.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/components/styleswitcher/jQuery.style.switcher.js') }}"></script>
     <!-- datatables js -->
     <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript">

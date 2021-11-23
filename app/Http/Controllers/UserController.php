@@ -23,7 +23,7 @@ class UserController extends Controller
       $users =  User::where('id',$id)->paginate(1);
       return view('admin.users.users', compact('users'));
     }
-
+    
     public function destroy($id) {
       $user = User::find($id);
       $user->sts = '0';
@@ -32,5 +32,21 @@ class UserController extends Controller
       //$roles = Roles::all();
       //return view('admin.users.users',compact('users','roles'));
       return redirect()->back()->with('success', ' User has been deleted successfully'); 
-      }
+    }
+
+    public function searchData(Request $request) {
+      $columnName = $request->columnName;
+      $filterValue = $request->filterValue;
+      echo $columnName.'|'.$filterValue;exit;
+      
+      $user = User::find($id);
+      $user->sts = '0';
+      $user->save();
+      //$users =  User::where('sts',1)->orderBy('id','DESC')->paginate(5);
+      //$roles = Roles::all();
+      //return view('admin.users.users',compact('users','roles'));
+      return redirect()->back()->with('success', ' User has been deleted successfully'); 
+    }
+
+
 }
