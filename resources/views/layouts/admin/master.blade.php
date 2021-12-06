@@ -11,6 +11,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/backend/plugins/images/favicon.png') }}') }}">
     <title>Cubic Admin Template</title>
       @include('sweetalert::alert')
+      <!-- ajaxlivejquery -->
+    <link href="{{ asset('assets/backend/js/jquery.min.js') }}" rel="stylesheet">
     <!-- ===== Bootstrap CSS ===== -->
     <link href="{{ asset('assets/backend/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- ===== Plugin CSS ===== -->

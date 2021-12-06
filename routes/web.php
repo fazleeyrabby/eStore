@@ -54,7 +54,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
     Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'notify'])->name('user.notify');
     Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
     Route::get('/user/delete/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('user.delete');
-    Route::post('/searchData/fetch/', [App\Http\Controllers\UserController::class, 'searchData']);
+    Route::get('/searchData/fetch/', [App\Http\Controllers\UserController::class, 'searchData']);
     Route::get('/product/create', [App\Http\Controllers\Admin\AdminController::class, 'create'])->name('create');
     Route::get('/product/manage', [App\Http\Controllers\Admin\AdminController::class, 'all_product'])->name('all_product');
     
