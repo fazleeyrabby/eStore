@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +56,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
     Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
     Route::get('/user/delete/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('user.delete');
     Route::get('/searchData/fetch/', [App\Http\Controllers\UserController::class, 'searchData']);
-    Route::get('/product/create', [App\Http\Controllers\Admin\AdminController::class, 'create'])->name('create');
+    Route::get('/product/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('create');
     Route::get('/product/manage', [App\Http\Controllers\Admin\AdminController::class, 'all_product'])->name('all_product');
     
 });

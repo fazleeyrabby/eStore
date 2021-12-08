@@ -21,7 +21,7 @@ class CreateProductHistoryTable extends Migration
             $table->string('name',250);
             $table->float('price', 8, 2);
             $table->longText('description');
-            $table->string('specification');
+            $table->longText('specification');
             $table->integer('qnty');
             $table->tinyInteger('sts')->default(1);
             $table->integer('e_by')->unsigned();
