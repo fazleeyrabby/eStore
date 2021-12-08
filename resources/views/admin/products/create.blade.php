@@ -35,11 +35,12 @@
                                         <label class="control-label">Category</label>
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="ti-user"></i></div>
-                                            <select class="form-control">
-                                                <option value="1">Cat one</option>
-                                                <option value="2">Cat two</option>
-                                                <option value="3">Cat three</option>
-                                            </select> 
+                                            <select name="product_category" id="product_category" onchange="changeBrand()" class="form-control">
+                                            <option value="0">Select</option>
+                                            @foreach ($ref_products as $product)
+                                            <option value="{{ $product->id }}">{{ $product->name }}</option>
+                                            @endforeach
+                                            </select>
                                         </div>
                                     </div> 
 
@@ -47,10 +48,11 @@
                                         <label class="control-label">Brand</label>
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="ti-user"></i></div>
-                                            <select class="form-control">
-                                                <option value="1">Easy</option>
-                                                <option value="2">Rechman</option>
-                                                <option value="3">Yellow</option>
+                                            <select name="brand" class="form-control">
+                                            <option value="0">Select</option>
+                                            @foreach ($ref_brands as $brand)
+                                            <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                            @endforeach
                                             </select> 
                                         </div>
                                        
@@ -128,20 +130,17 @@
             </div>
         </div>
     </div>
-    <!-- <script>
-      $('#specification').summernote({
-        placeholder: 'Specification',
-        tabsize: 2,
-        height: 300
-      });
-
-      $('#description').summernote({
-        placeholder: 'Description',
-        tabsize: 2,
-        height: 300
-      });
-    </script> -->
 @endsection
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+  }
+
+  function changeBrand() {
+      
+  }
+</script>
 
 @section('js')
 

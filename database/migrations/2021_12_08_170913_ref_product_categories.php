@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRefProductTableTable extends Migration
+class RefProductCategories extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateRefProductTableTable extends Migration
      */
     public function up()
     {
-        Schema::create('ref_product_category', function (Blueprint $table) {
+        Schema::create('ref_product_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('brand_id')->unsigned();
             $table->text('name',250);
             $table->integer('code')->unsigned();
             $table->tinyInteger('sts')->default(1);
@@ -35,6 +34,6 @@ class CreateRefProductTableTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ref_product_table');
+        Schema::dropIfExists('ref_product_categories');
     }
 }
