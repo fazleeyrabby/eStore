@@ -58,7 +58,10 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
     Route::get('/searchData/fetch/', [App\Http\Controllers\UserController::class, 'searchData']);
     Route::get('/product/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('create');
     Route::get('/product/manage', [App\Http\Controllers\Admin\AdminController::class, 'all_product'])->name('all_product');
-    
+    Route::post('/product/ref_sub_cat', [App\Http\Controllers\Admin\ProductController::class, 'ref_sub_category'])->name('product.ref_sub_cat');
+    Route::post('/product/ref_product', [App\Http\Controllers\Admin\ProductController::class, 'ref_product'])->name('product.ref_product');
+    Route::post('/product/productInput', [App\Http\Controllers\Admin\ProductController::class, 'productInput'])->name('product.inputview');
+    Route::post('/product/store', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('product.store');
 });
 // end middalewre area
 
