@@ -53,11 +53,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <button type="button" id="generate_form" class="btn btn-success waves-effect waves-light m-r-10">Generate</button> @csrf
-                                        </div>
-                                    </div>
                                     <div class="row">
                                         <div id="input_str" class="col-sm-12 col-xs-12">
                                             
@@ -132,7 +127,7 @@
         }
     });
 
-    $('#generate_form').click(function() {
+    $('#sub_categories').change(function() {
         var sub_category = $("#sub_categories").val();
         var _token = $('input[name="_token"]').val();
         $.ajax({
