@@ -92,13 +92,13 @@ class ProductController extends Controller
                     <div class="form-group">
                             <div class="col-sm-12 col-md-12 col-xs-12">
                             <label for="input-file-now">Description</label>
-                            <textarea id="description" cols="6" rows="6" value="" class="form-control" name="top_text"></textarea>
+                            <textarea id="description" cols="6" rows="20" value="" class="form-control" name="top_text"></textarea>
                             </div>
                     </div>
                     <div class="form-group">
                             <div class="col-sm-12 col-md-12 col-xs-12">
-                            <label for="input-file-now">specification</label>
-                            <textarea id="specification" cols="6" rows="6" value="" class="form-control" name="top_text"></textarea>
+                            <label for="input-file-now">Specification</label>
+                            <textarea id="specification" cols="6" rows="20" value="" class="form-control" name="top_text"></textarea>
                             </div>
                     </div>
                     <div class="form-group">
