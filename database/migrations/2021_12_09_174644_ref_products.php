@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RefBrands extends Migration
+class RefProducts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,18 @@ class RefBrands extends Migration
      */
     public function up()
     {
-        Schema::create('ref_brands', function (Blueprint $table) {
+        Schema::create('ref_products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name',250);
             $table->integer('cat_id');
-            $table->integer('code')->unsigned();
+            $table->integer('sub_cat_id');
+            $table->string('name',255);
+            $table->integer('code');
             $table->tinyInteger('sts')->default(1);
-            $table->integer('e_by')->unsigned();
+            $table->integer('e_by');
             $table->dateTime('e_dt');  
-            $table->integer('u_by')->unsigned();
+            $table->integer('u_by');
             $table->dateTime('u_dt');  
-            $table->integer('d_by')->unsigned();
+            $table->integer('d_by');
             $table->dateTime('d_dt');
         });
     }
@@ -35,6 +36,6 @@ class RefBrands extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('ref_products');
     }
 }

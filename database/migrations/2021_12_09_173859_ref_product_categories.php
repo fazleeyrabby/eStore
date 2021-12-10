@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRefCategorySubTable extends Migration
+class RefProductCategories extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateRefCategorySubTable extends Migration
      */
     public function up()
     {
-        Schema::create('ref_category_sub', function (Blueprint $table) {
+        Schema::create('ref_product_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('cat_id')->unsigned();
-            $table->longText('image');
+            $table->string('name',255);
+            $table->integer('code');
             $table->tinyInteger('sts')->default(1);
-            $table->integer('e_by')->unsigned();
+            $table->integer('e_by');
             $table->dateTime('e_dt');  
-            $table->integer('u_by')->unsigned();
+            $table->integer('u_by');
             $table->dateTime('u_dt');  
-            $table->integer('d_by')->unsigned();
+            $table->integer('d_by');
             $table->dateTime('d_dt');
         });
     }
@@ -34,6 +34,6 @@ class CreateRefCategorySubTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ref_category_sub');
+        Schema::dropIfExists('ref_product_categories');
     }
 }

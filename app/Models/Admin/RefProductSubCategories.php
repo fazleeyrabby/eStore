@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RefProductCategory extends Model
+class RefProductSubCategories extends Model
 {
     use HasFactory;
-    protected $fillable=[
-        'name'
-    ];
 }
