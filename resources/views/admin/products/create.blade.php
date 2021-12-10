@@ -1,11 +1,6 @@
 @extends('layouts.admin.master')
 @section('title', 'create')
 @section('content')
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
-    
-
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
-    
     <div class="page-wrapper">
         <div class="container-fluid">
         	<div class="row">
@@ -82,6 +77,7 @@
                                          <div class="col-sm-12 col-md-12 col-xs-12">
                                             <label for="input-file-now">Description</label>
                                             <textarea id="description" cols="6" rows="6" value="" class="form-control" name="top_text"></textarea>
+                                            <!-- <div id="description"></div> -->
                                          </div>
                                     </div>
 
@@ -112,8 +108,7 @@
                                                 </div>
                                             </form>
                                         </div>
-                                    </div> 
-                                
+                                    </div>
                                     <div class="form-group">
                                         <div class="col-md-12">
                                         <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>
@@ -128,45 +123,35 @@
             </div>
         </div>
     </div>
-    <!-- <script>
-      $('#specification').summernote({
-        placeholder: 'Specification',
-        tabsize: 2,
-        height: 300
-      });
-
-      $('#description').summernote({
-        placeholder: 'Description',
-        tabsize: 2,
-        height: 300
-      });
-    </script> -->
+    
 @endsection
 
 @section('js')
-
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
-
-
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $('#specification').summernote({
-        placeholder: 'Hello Bootstrap 4',
-        tabsize: 2,
-        height: 100
-      });
-
-
-$('#description').summernote({
-        placeholder: 'Hello Bootstrap 4',
-        tabsize: 2,
-        height: 100
-      });
-
-      })
-    </script>
-
-    @endsection
+    <!-- start without bootstrap plugin summernote -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script> -->
+    <!-- <script>
+         $('#specification').summernote({
+            placeholder: 'Hello stand alone ui',
+            tabsize: 2,
+            height: 120,
+            toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    </script> -->
+     <!-- end without bootstrap plugin summernote -->
+     <!-- start another summernote plugin in master file-->
+     <script>
+        $(document).ready(function() {
+            $('#description').summernote();
+            $('#specification').summernote();
+        });
+  </script>
+     <!-- end another summernote plugin -->
+@endsection

@@ -26,10 +26,14 @@
     <link href="{{ asset('assets/backend/css/colors/default.css') }}" id="theme" rel="stylesheet">
     <!-- datatable -->
      <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
-
-     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
      <!-- ===== Plugin CSS ===== -->
-    <link href="{{ asset('assets/backend/css/dropzone.css') }}" rel="stylesheet" type="text/css" />
+     <!-- start summernote -->
+     <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet"> -->
+     <!-- end summernote -->
+      <!-- start without bootstrap plugin summernote -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+     <!-- end without bootstrap plugin summernote -->
+
 </head>
 
 <body class="mini-sidebar">
@@ -246,35 +250,31 @@
     <script src="{{ asset('assets/backend/plugins/components/styleswitcher/jQuery.style.switcher.js') }}"></script>
     <!-- datatables js -->
     <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-        //$('#users_table').DataTable();
-    } );
-    </script>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
-<!-- Dropzone Plugin JavaScript -->
-<script src="{{ asset('assets/backend/js/dropzone.js') }}"></script>
-
-<!-- <script type="text/javascript">
-  $(document).ready(function(){
-    $('#specification').summernote({
-    placeholder: 'Hello Bootstrap 4',
-    tabsize: 2,
-    height: 100
-  });
-
-
-$('#description').summernote({
-    placeholder: 'Hello Bootstrap 4',
-    tabsize: 2,
-    height: 100
-  });
-
-  })
-</script> -->
+    <!-- start summernote -->
+       <!-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script> -->
+    <!-- end summernote -->
+    
+    <!-- start without bootstrap plugin summernote -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <!-- <script>
+         $('#specification').summernote({
+            placeholder: 'Hello stand alone ui',
+            tabsize: 2,
+            height: 120,
+            toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    </script> -->
+     <!-- end without bootstrap plugin summernote -->
+    @yield('js')
 
 </body>
 
