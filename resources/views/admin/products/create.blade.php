@@ -86,10 +86,18 @@
 @endsection
 
 @section('js')
+<!-- start another summernote plugin in master file-->
+<script>
+        $(document).ready(function() {
+            // $('#description').summernote();
+            // $('#specification').summernote();
+        });
+  </script>
+     <!-- end another summernote plugin -->
 <script type="text/javascript">
-    $(document).ready(function(){
+    // $(document).ready(function(){
    
-    })
+    // })
 
     $('#product_category').change(function() {
         if ($(this).val() != '') {
@@ -141,6 +149,14 @@
             },
             success: function(result) {
                 $('#input_str').html(result);
+                $('#description').summernote({
+                    placeholder: 'Give a description',
+                    tabsize: 2,
+                    height: 200});
+                $('#specification').summernote({
+                    placeholder: 'Give a specification',
+                    tabsize: 2,
+                    height: 200});
             }
         })
     });
