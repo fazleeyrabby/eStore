@@ -15,30 +15,33 @@
                         <br>
                         <div class="row">
                             <div class="col-sm-12 col-xs-12">
-                                <form>
+                                <form action="{{ route('product.store') }}" method="POST">
+                                @csrf
                                     <div class="form-group">
                                         <label class="control-label">Category</label>
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="ti-user"></i></div>
                                             <select name="product_category" id="product_category" class="form-control">
                                             <option value="0">Select</option>
-                                            @foreach ($ref_products as $product)
+                                            @foreach ($ref_categories as $product)
                                             <option value="{{ $product->id }}">{{ $product->name }}</option>
                                             @endforeach
                                             </select>
+                                            @csrf
                                         </div>
                                     </div>
-
+                                  
                                     <div class="form-group">
                                         <label class="control-label">Sub Category</label>
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="ti-user"></i></div>
                                             <select class="form-control" name="sub_categories"  id="sub_categories" >
                                             <option value="0">Select</option>
-                                            @foreach ($ref_products as $brand)
+                                            @foreach ($ref_categories as $brand)
                                             <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                                             @endforeach
-                                            </select> 
+                                            </select>
+                                            @csrf
                                         </div>
                                     </div>
 
@@ -48,13 +51,24 @@
                                             <div class="input-group-addon"><i class="ti-user"></i></div>
                                             <select class="form-control" name="product" id="product" >
                                             <option value="0">Select</option>
-                                            @foreach ($ref_products as $brand)
+                                            @foreach ($ref_categories as $brand)
                                             <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                                             @endforeach
                                             </select> 
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <button type="button" id="generate_form" class="btn btn-success waves-effect waves-light m-r-10">Generate</button> @csrf
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="input_str" class="col-sm-12 col-xs-12">
+                                            
+
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <div class="col-md-12">
                                         <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>
@@ -74,26 +88,61 @@
 @section('js')
 <script type="text/javascript">
     $(document).ready(function(){
-        alert("hiiiii");
-        $('#specification').summernote({
-        placeholder: 'Hello Bootstrap 4',
-        tabsize: 2,
-        height: 100
-        });
-
-
-    $('#description').summernote({
-        placeholder: 'Hello Bootstrap 4',
-        tabsize: 2,
-        height: 100
-        });
+   
     })
 
     $('#product_category').change(function() {
         if ($(this).val() != '') {
            var category = $(this).val();
-           alert(category);
+           var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url: "{{ route('product.ref_sub_cat') }}",
+                method: "POST",
+                data: {
+                    _token,
+                    category
+                },
+                success: function(result) {
+                    $('#sub_categories').html(result);
+                }
+            })
         }
+    });
+
+    $('#sub_categories').change(function() {
+        if ($(this).val() != '') {
+           var category = $("#product_category").val();
+           var sub_category = $(this).val();
+           var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url: "{{ route('product.ref_product') }}",
+                method: "POST",
+                data: {
+                    _token,
+                    category,
+                    sub_category
+                },
+                success: function(result) {
+                    $('#product').html(result);
+                }
+            })
+        }
+    });
+
+    $('#generate_form').click(function() {
+        var sub_category = $("#sub_categories").val();
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+            url: "{{ route('product.inputview') }}",
+            method: "POST",
+            data: {
+                _token,
+                sub_category
+            },
+            success: function(result) {
+                $('#input_str').html(result);
+            }
+        })
     });
 </script>
 @endsection

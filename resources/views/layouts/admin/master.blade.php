@@ -246,15 +246,7 @@
     <script src="{{ asset('assets/backend/plugins/components/styleswitcher/jQuery.style.switcher.js') }}"></script>
     <!-- datatables js -->
     <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-    <!-- <script type="text/javascript">
-        $(document).ready(function() {
-            $("#product_category").on("change", function(){
-            var columnName = $('#product_category').val();
-            alert(columnName);
-        });
-    } );
-    </script> -->
-
+    @yield('js')
 </body>
 
 </html>

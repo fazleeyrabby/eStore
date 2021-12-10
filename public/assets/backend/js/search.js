@@ -30,9 +30,9 @@
 
 
 
-        $(document).ready(function() {
-            $("#product_category").on("change", function(){
-            var columnName = $('#product_category').val();
-            alert(columnName);
-        });
-    } );
+    //     $(document).ready(function() {
+    //         $("#product_category").on("change", function(){
+    //         var columnName = $('#product_category').val();
+    //         alert(columnName);
+    //     });
+    // } );
